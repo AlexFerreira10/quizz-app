@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_app/custom_text.dart';
-import 'package:quiz_app/outline_button.dart';
+import 'package:quiz_app/widgets/custom_text.dart';
+import 'package:quiz_app/widgets/outline_button.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -15,10 +15,11 @@ class StartScreen extends StatelessWidget {
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 250,
+          color: const Color.fromARGB(150, 253, 253, 253),
         ),
         CustomText("Learn Flutter the fun way!"),
         CustomOutlinedButton(
-          child: Text(
+          text: Text(
             'Start Quizz',
             style: TextStyle(color: Colors.white),
           ),
