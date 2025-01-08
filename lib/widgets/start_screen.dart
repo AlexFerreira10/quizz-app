@@ -3,7 +3,9 @@ import 'package:quiz_app/widgets/custom_text.dart';
 import 'package:quiz_app/widgets/outline_button.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuizz, {super.key});
+
+  final void Function() startQuizz;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +21,7 @@ class StartScreen extends StatelessWidget {
         ),
         CustomText("Learn Flutter the fun way!"),
         CustomOutlinedButton(
+          onPressed: startQuizz,
           text: Text(
             'Start Quizz',
             style: TextStyle(color: Colors.white),
