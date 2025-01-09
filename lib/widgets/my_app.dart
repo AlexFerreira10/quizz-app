@@ -10,22 +10,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Widget? activeScreen;
+  late String activeScreen;
 
   @override
   void initState() {
     super.initState();
-    activeScreen = StartScreen(switchScreen);
+    activeScreen = 'start-screen';
   }
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuestionsScreen();
+      activeScreen = 'questions-screen';
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
+
+    if (activeScreen == 'questions-screen') {
+      screenWidget = const QuestionsScreen();
+    }
+
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -39,7 +45,7 @@ class _MyAppState extends State<MyApp> {
             ],
           ),
         ),
-        child: activeScreen,
+        child: screenWidget,
       ),
     );
   }

@@ -10,6 +10,18 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Text("Trocou de tela");
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('The question...'),
+          const SizedBox(height: 30),
+          ElevatedButton(onPressed: () {}, child: const Text('answer 1...')),
+          ElevatedButton(onPressed: () {}, child: const Text('answer 1...')),
+          ElevatedButton(onPressed: () {}, child: const Text('answer 1...'))
+        ],
+      ),
+    );
   }
 }
