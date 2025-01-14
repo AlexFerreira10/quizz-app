@@ -16,7 +16,7 @@ class SummaryItem extends StatelessWidget {
       children: [
         QuestionIdentifier(
           isCorrectAnswer: isCorrectAnswer,
-          questionIndex: itemData['question_index'] as int,
+          questionIndex: itemData['questions_index'] as int,
         ),
         const SizedBox(width: 20),
         Expanded(
@@ -24,14 +24,13 @@ class SummaryItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                itemData['question'] as String,
+                itemData['questions'] as String,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
               const SizedBox(
                 height: 5,
               ),
@@ -46,6 +45,9 @@ class SummaryItem extends StatelessWidget {
                 style: const TextStyle(
                   color: Color.fromARGB(255, 181, 254, 246),
                 ),
+              ),
+              const SizedBox(
+                height: 5,
               ),
             ],
           ),
